@@ -10,7 +10,7 @@ public class Runigram {
 		//// Hide / change / add to the testing code below, as needed.
 		
 		// Tests the reading and printing of an image:	
-		Color[][] tinypic = read("tinypic.ppm");
+		//Color[][] tinypic = read("tinypic.ppm");
 		//for ( int i = 0; i < tinypic.length; i++ ) {
 			//for ( int j = 0; j < tinypic[i].length; j++ ) {
 				//print(tinypic[i][j]);
@@ -93,13 +93,10 @@ public class Runigram {
 	 */
 	public static Color[][] flippedHorizontally(Color[][] image) {
 		Color[][] flippedHorizonImage = new Color [image.length][image[0].length];
-		int t = (image.length) - 1;
 		for ( int i = 0; i < flippedHorizonImage.length; i++ ) {
 			for ( int j = 0; j < flippedHorizonImage[i].length; j++ ) {
-				flippedHorizonImage [i][j] = image [i][t];
-				t--;
+				flippedHorizonImage [i][j] = image [i][image[0].length-1-j];
 			}
-			t = (image.length) - 1;
 		}
 		return flippedHorizonImage;
 	}
